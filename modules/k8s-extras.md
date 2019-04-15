@@ -27,5 +27,5 @@ These extra items should help us navigate lab faster.
     kubeoff
     FOE
 
-    bash
+    bash -l
     ```
