@@ -257,7 +257,3 @@ When creating Dockerfiles there are [several best practices](https://docs.docker
 1. Go inside running container (`docker exec -it <container-id> bash`) and find its IP (`ip addr show`)
 1. Inspect the docker container (`docker inspect <container-id>`) and find its IP
 1. Make sure you understand the difference between [host](https://docs.docker.com/network/host/) and default [bridge](https://docs.docker.com/network/bridge/) networks.
-
----
-
-Next: [Kubernetes Operations (kops)](kops.md)

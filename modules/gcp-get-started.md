@@ -160,7 +160,3 @@ stackdriver.googleapis.com  Stackdriver API
 ```
 
 > Note: Notice how some APIs are enabled as dependencies, such as Cloud OS Login.
-
----
-
-Next: [Containers](containers.md)

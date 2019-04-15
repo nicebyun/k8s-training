@@ -415,7 +415,3 @@ Check our blog post [Kubernetes Networking: How to Write Your Own CNI Plug-in wi
     ```shell
     gcloud compute instances delete k8s-master k8s-worker  --quiet
     ```
-
----
-
-Next: [Services](09-services.md)

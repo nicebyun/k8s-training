@@ -247,7 +247,3 @@ Keeping the mapping between the VIP and the pods up-to-date is the job of kube-p
     kubectl delete service frontend redis-slave redis-master
     kubectl delete deployment frontend redis-slave redis-master
     ```
-
----
-
-Next: [Secrets and ConfigMaps](secrets_and_config_maps.md)

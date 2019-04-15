@@ -233,7 +233,3 @@
     ```
 
 Note: We could also cleanup using the wordpress label
-
----
-
-Next: [Stateful Sets](stateful_sets.md)

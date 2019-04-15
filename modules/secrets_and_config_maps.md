@@ -74,7 +74,3 @@ Putting this information in a secret is safer and more flexible than putting it 
 
 ### Exercise 3 (Optional): Use config maps
 1. Convert the secret from the previous exercise to ConfigMap. Use [official documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/) for reference.
-
----
-
-Next: [Volumes and Data](volumes.md)

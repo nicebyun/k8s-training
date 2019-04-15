@@ -210,7 +210,3 @@ You will get an error as phone number does not satisfy formatting requirements f
 1. List the pods using selectors that will return all pods with versions not equal to 3
 
 Refer to the [documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors) to review selector syntax.
-
----
-
-Next: [Services](services.md)

@@ -19,7 +19,7 @@ We wanted to show our students another way to deploying kubernetes and next two 
 
    ```shell
    cd ~/k8s-training-jan2019
-   
+
    gcloud compute instances create k8s-master-01 --zone=us-west1-c --machine-type=n1-standard-4 --subnet=default \
      --image=ubuntu-1604-xenial-v20190122a --image-project=ubuntu-os-cloud --boot-disk-size=20GB --boot-disk-type=pd-standard \
      --boot-disk-device-name=k8s-master-01 --metadata-from-file startup-script=modules/scripts/k8s-user-data.sh \
@@ -139,7 +139,7 @@ We wanted to show our students another way to deploying kubernetes and next two 
    k8s-node-02     NotReady   <none>   17s   v1.13.2
    ```
 
-1. We will also be labeling nodes manually at this point as well. This becomes important for controllerManager as it checks if nodes have these annotations during volume creation and attaching to nodes. 
+1. We will also be labeling nodes manually at this point as well. This becomes important for controllerManager as it checks if nodes have these annotations during volume creation and attaching to nodes.
 
    ```shell
    kubectl label node k8s-node-01 failure-domain.beta.kubernetes.io/region=us-west1 failure-domain.beta.kubernetes.io/zone=us-west1-c
@@ -157,7 +157,3 @@ We wanted to show our students another way to deploying kubernetes and next two 
    ```
 
    Typically at this point the master and nodes would turn from `NotReady` to `Ready` state. Why do you think systems are not flipping to good state? Well we will be taking a look at this very question next.
-
----
-
-Next: [Pod and Network Security](security.md)

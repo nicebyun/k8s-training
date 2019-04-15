@@ -148,7 +148,3 @@ A deployment is a supervisor for pods and replica sets, giving you fine-grained 
     ```
     kubectl delete deployment simpleservice
     ```
-
----
-
-Next: [Labels and Selectors](labels.md)

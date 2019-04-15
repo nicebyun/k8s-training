@@ -175,7 +175,3 @@ Ingress can provide load balancing, SSL termination and name-based virtual hosti
     ```
     kubectl delete -f ingress-sample-apps.yaml
     ```
-
----
-
-Next: [Namespaces and RBAC](namespaces.md)

@@ -175,7 +175,3 @@ Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their
     kubectl delete pods -l="app=cassandra"
     kubectl delete service cassandra
     ```
-
----
-
-Next: [Ingress](ingress.md)
