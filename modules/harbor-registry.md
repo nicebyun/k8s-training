@@ -7,7 +7,7 @@ Harbor is an open source cloud native registry that provides trust, compliance, 
 
 1. Harbor RBAC model
 
-    ![](img/harbor_rbac.png)
+    ![](img/harbor-registry.jpg)
 
 1. Clone and Create namespace
 
@@ -177,40 +177,40 @@ Harbor is an open source cloud native registry that provides trust, compliance, 
 
     ***It turns out that on our nodes we we run a container runtime engine called Docker and so we have to do same thing for kubernetes so it wont complain if we use a self-signed certificate.***
 
-    ## Allow insecure registry on kubernetes
+## Allow insecure registry on kubernetes
 
-    1. Modify cluster
+1. Modify cluster
 
-        ```shell
-        kops edit cluster
-        ```
+    ```shell
+    kops edit cluster
+    ```
 
-        Add this to cluster spec section:
-        https://stackoverflow.com/questions/43967360/how-to-create-kubernetes-cluster-using-kops-with-insecure-registry
-        ```
-          docker:
-            insecureRegistry: registry.example.com
-            logDriver: json-file
-        ```        
+    Add this to cluster spec section:
+    https://stackoverflow.com/questions/43967360/how-to-create-kubernetes-cluster-using-kops-with-insecure-registry
+    ```
+      docker:
+        insecureRegistry: registry.example.com
+        logDriver: json-file
+    ```        
 
-        Check our changes:
-        ```
-        kops update cluster
-        ```
+    Check our changes:
+    ```
+    kops update cluster
+    ```
 
-        Confirm our changes
-        ```shell
-        kops update cluster --yes
-        ```
+    Confirm our changes
+    ```shell
+    kops update cluster --yes
+    ```
 
-        Checks what needs to be updated in rolling update:
-        ```
-        kops rolling-update cluster
-        ```
+    Checks what needs to be updated in rolling update:
+    ```
+    kops rolling-update cluster
+    ```
 
-        Confirms our rolling update and we leave it running for 30 or so minutes:
-        ```shell
-        kops rolling-update cluster --yes
-        ```        
+    Confirms our rolling update and we leave it running for 30 or so minutes:
+    ```shell
+    kops rolling-update cluster --yes
+    ```        
 
-        Check back tomorrow :).
+    Check back tomorrow :).
