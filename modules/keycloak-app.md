@@ -104,10 +104,12 @@ This repository contains the source code for the Keycloak Server, Java adapters 
     -e "s/HARBOR_CORE/$HARBOR_CORE/" | kubectl apply -f -
     ```
 
+    Checking status of deployment:
     ```console
     kubectl get pods
     ```
 
+    Should look something like this:
     ```console
     NAME                            READY     STATUS    RESTARTS   AGE
     backend-9c969496b-fjsb9         1/1       Running   0          2d
@@ -118,6 +120,7 @@ This repository contains the source code for the Keycloak Server, Java adapters 
     kubectl create secret tls ${CERT_NAME} --key ${KEY_FILE} -
     ```
 
+    Deploy ingress, get public route and try it out:
     ```shell
     cat modules/keycloak-demo/backend/backend-ingress.yaml | sed "s/BACKEND_HOST/$BACKEND_HOST/" | \
     kubectl apply -f -
@@ -137,17 +140,20 @@ This repository contains the source code for the Keycloak Server, Java adapters 
 
 ## Frontend with private repo
 1. Deploying fronted application for our backend.
+    Docker build and push:
     ```shell
     docker build -t ${HARBOR_CORE}/pub/kube-demo-frontend modules/keycloak-demo/frontend
     docker push ${HARBOR_CORE}/pub/kube-demo-frontend
     ```
 
+    Deploy app after updating variables:
     ```
     cat modules/keycloak-demo/frontend/frontend.yaml | sed -e "s/KEYCLOAK_HOST/$KEYCLOAK_HOST/" \
     -e "s/BACKEND_HOST/$BACKEND_HOST/" -e "s/HARBOR_CORE/$HARBOR_CORE/" | \
     kubectl apply -f -
     ```
 
+    Once deployment is up and running we can add ingress:
     ```
     cat modules/keycloak-demo/frontend/frontend-ingress.yaml | sed "s/FRONTEND_HOST/$FRONTEND_HOST/" | \
     kubectl apply -f -
@@ -158,3 +164,8 @@ This repository contains the source code for the Keycloak Server, Java adapters 
     The frontend application should now be opened in your browser. Login with joe/pass. You should be able to invoke public and invoke secured, but not invoke admin. To be able to invoke admin go back to the Keycloak admin console and add the `admin` role to the user `joe`.
 
 1. Demo Integration:
+
+
+1. Change Frontend to private repo.
+  - Update from ${HARBOR_CORE}/pub/kube-demo-frontend to ${HARBOR_CORE}/priv/kube-demo-frontend
+  - https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
