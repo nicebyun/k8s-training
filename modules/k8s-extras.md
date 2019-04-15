@@ -23,7 +23,13 @@ These extra items should help us navigate lab faster.
 
     #kube-ps1
     source ~/.kube-ps1/kube-ps1.sh
-    PS1='\$(kube_ps1) ;\${DEVSHELL_PROJECT_ID:-Cloud Shell}\a\]\u@cloudshell:\[\033[1;34m\]\w$([[ -n \$DEVSHELL_PROJECT_ID ]] && printf " \[\033[1;33m\](%s)" \${DEVSHELL_PROJECT_ID} )\[\033[00m\]$ \[\033$([[ -n \$DEVSHELL_PROJECT_ID ]] && printf "(%s)" \${DEVSHELL_PROJECT_ID} || printf "cloudshell")\033\\\]'
+    export PS1='\[\e]0;${DEVSHELL_PROJECT_ID:-Cloud Shell}\a\]'
+    # Prompt that looks like `codr@cloudshell:~/google $`
+    # or if the project is set `codr@cloudshell:~/google (cool-project) $`
+    export PS1+='\u@cloudshell:\[\033[1;34m\]\w $(kube_ps1)$([[ -n $DEVSHELL_PROJECT_ID ]] && printf " \[\033[1;33m\](%s)" ${DEVSHELL_PROJECT_ID} )\[\033[00m\]$ '
+    if [[ -n $TMUX ]]; then
+      export PS1+='\[\033k$([[ -n $DEVSHELL_PROJECT_ID ]] && printf "(%s)" ${DEVSHELL_PROJECT_ID} || printf "cloudshell")\033\\\]'
+    fi
     kubeoff
     FOE
 
