@@ -18,9 +18,9 @@ I am providing you the private key used to access repo via ssh.
 Clone the lab repository in your cloud shell, then `cd` into that directory:
 
     ```console
-    git clone git@github.com:cxhercules/k8s-training.git k8s-workspace
+    git clone git@github.com:cxhercules/k8s-training.git k8s-training
     ```
 
     ```console
-    cd k8s-workspace
+    cd k8s-training
     ```
