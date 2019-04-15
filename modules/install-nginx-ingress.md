@@ -17,7 +17,7 @@ To use, add the kubernetes.io/ingress.class: nginx annotation to your Ingress re
     helm install --name nginx-ingress stable/nginx-ingress --set rbac.create=true
     ```
 
-    We will need to take note of configuration notes after helm install so we will be able to use it for our deployments. In particular we will take note of LoadBalancer IP and tls configuration. 
+    We will need to take note of configuration notes after helm install so we will be able to use it for our deployments. In particular we will take note of LoadBalancer IP and tls configuration.
 
     If you want to watch as the ingress gets bound to IP run this command:
     ```console
@@ -30,8 +30,8 @@ To use, add the kubernetes.io/ingress.class: nginx annotation to your Ingress re
     ## ingress
     echo "## ingress and cert variables" >> ~/.bashrc
     echo "export KUBE_IP=$(kubectl -n ingress get svc nginx-ingress-controller -ojsonpath='{.status.loadBalancer.ingress[].ip}')" >> ~/.bashrc
-    echo 'export KEY_FILE=key.pem' >> ~/.bashrc
-    echo -e 'export CERT_FILE=cert.pem\n' >> ~/.bashrc
+    echo "export KEY_FILE=$(pwd)/key.pem" >> ~/.bashrc
+    echo -e "export CERT_FILE=$(pwd)/cert.pem\n" >> ~/.bashrc
     bash -l
 
     HOST="\*.$KUBE_IP.nip.io"
