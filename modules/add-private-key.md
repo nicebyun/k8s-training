@@ -22,5 +22,5 @@ Clone the lab repository in your cloud shell, then `cd` into that directory:
     ```
 
     ```console
-    cd k8s-workspace
+    cd k8s-training
     ```
