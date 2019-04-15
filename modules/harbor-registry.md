@@ -5,7 +5,7 @@ Harbor is an open source cloud native registry that provides trust, compliance, 
 
 ## Setup
 
-1. Harbor RBAC model
+1. Harbor Architecture:
 
     ![](img/harbor-registry.jpg)
 
@@ -179,7 +179,7 @@ Harbor is an open source cloud native registry that provides trust, compliance, 
 
 ## Allow insecure registry on kubernetes
 
-1. Modify cluster
+1. Modify cluster and roll out changes:
 
     ```shell
     kops edit cluster
