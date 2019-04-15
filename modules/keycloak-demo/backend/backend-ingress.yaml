@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: backend
+spec:
+  rules:
+    - host: BACKEND_HOST
+      http:
+        paths:
+          - backend:
+              serviceName: backend
+              servicePort: 8080
+            path: /
+  # This section is only required if TLS is to be enabled for the Ingress
+  tls:
+      - hosts:
+          - BACKEND_HOST
+        secretName: kube-tls

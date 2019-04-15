@@ -1,0 +1,21 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  annotations:
+    storageclass.beta.kubernetes.io/is-default-class: "true"
+  labels:
+    addonmanager.kubernetes.io/mode: EnsureExists
+    k8s-addon: storage-gce.addons.k8s.io
+    kubernetes.io/cluster-service: "true"
+  name: standard
+parameters:
+  type: pd-standard
+  fsType: ext4
+provisioner: kubernetes.io/gce-pd
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+allowedTopologies:
+- matchLabelExpressions:
+  - key: failure-domain.beta.kubernetes.io/zone
+    values:
+    - us-west1-c
