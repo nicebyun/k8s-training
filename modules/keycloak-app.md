@@ -167,5 +167,5 @@ This repository contains the source code for the Keycloak Server, Java adapters 
 
 
 1. Change Frontend to private repo.
-  - Update from ${HARBOR_CORE}/pub/kube-demo-frontend to ${HARBOR_CORE}/priv/kube-demo-frontend
+  - Update from `${HARBOR_CORE}/pub/kube-demo-frontend to ${HARBOR_CORE}/priv/kube-demo-frontend`
   - https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
