@@ -161,18 +161,6 @@ stackdriver.googleapis.com  Stackdriver API
 
 > Note: Notice how some APIs are enabled as dependencies, such as Cloud OS Login.
 
-
-## Download the Lab Source Code from GitHub
-
-Clone the lab repository in your cloud shell, then `cd` into that directory:
-
-```shell
-git clone https://github.com/Altoros/k8s-training-jan2019.git
-```
-```shell
-cd k8s-training-jan2019
-```
-
 ---
 
 Next: [Containers](containers.md)

@@ -3,6 +3,7 @@ Program for the Private training - Apr 2019
 
 * **Day 1**
     1. [GCP Cloud Setup](modules/gcp-get-started.md)
+    1. [Add SSH Private Key](modules/add-private-key.md)
     1. [Creating and running containers](modules/containers.md)
     1. [Kubernetes Operations (kops)](modules/kops.md)
     1. [Kubernetes Extras](modules/k8s-extras.md)
@@ -20,7 +21,8 @@ Program for the Private training - Apr 2019
     1. [Stateful Sets](modules/stateful_sets.md)
     1. [Ingress](modules/ingress.md)
     1. [Namespaces and RBAC](modules/namespaces.md)
-    1. [Keycloak](modules/keycloak.md)
+    1. [Keycloak with Application](modules/keycloak-app.md)
+    1. [Keycloak with OIDC - Reference](modules/keycloak-oidc.md)
 * **Day 3**
     1. [Kubelet](modules/kubelet.md)
     1. [API Server](modules/api.md)
