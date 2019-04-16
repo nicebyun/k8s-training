@@ -51,6 +51,7 @@ Harbor is an open source cloud native registry that provides trust, compliance, 
     echo 'export HARBOR_CORE=core.$KUBE_IP.nip.io' >> ~/.bashrc
     echo -e 'export HARBOR_NOTARY=notary.$KUBE_IP.nip.io\n' >> ~/.bashrc
     bash -l
+    export CERT_NAME=kube-tls
     kubectl create secret tls ${CERT_NAME} --key ${KEY_FILE} --cert ${CERT_FILE}
     ```
 
