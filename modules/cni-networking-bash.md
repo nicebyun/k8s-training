@@ -38,11 +38,11 @@
 1. Open two cloud-shell terminals, SSH into `k8s-master` in one, and `k8s-worker` on the other.
 
     ```shell
-    gcloud compute ssh "k8s-master"
+    gcloud compute ssh "k8s-master" --zone us-west2-b
     ```
 
     ```shell
-    gcloud compute ssh "k8s-worker"
+    gcloud compute ssh "k8s-worker" --zone us-west2-b
     ```
 
 1. On both master and worker nodes install prerequisite packages.
