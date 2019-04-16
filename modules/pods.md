@@ -93,7 +93,7 @@ A pod is a collection of containers sharing a network and mount namespace and is
       - name: shell
         image: centos:7
         command:
-          - "bin/bash"
+          - "/bin/bash"
           - "-c"
           - "sleep 10000"
     EOF
