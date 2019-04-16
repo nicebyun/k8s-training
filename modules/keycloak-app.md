@@ -63,6 +63,7 @@ This repository contains the source code for the Keycloak Server, Java adapters 
     Add Certificate to namespace as secret.
     Remember we have these variables defined in ~/.bashrc
     ```shell
+    export CERT_NAME=kube-tls
     kubectl create secret tls ${CERT_NAME} --key ${KEY_FILE} --cert ${CERT_FILE}
     ```
 
