@@ -357,6 +357,10 @@
 
     ```shell
     sudo iptables -S FORWARD
+    ```
+    
+    Output:
+    ```
       -P FORWARD DROP
       -A FORWARD -m comment --comment "kubernetes forwarding rules" -j KUBE-FORWARD
       -A FORWARD -j DOCKER-ISOLATION
