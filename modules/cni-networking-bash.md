@@ -340,7 +340,7 @@
     kubectl exec -it bash-master bash
     ```
 
-1. Verify network connectivity.
+1. Verify network connectivity. (Your ip's maybe slightly different, `ifconfig` should help)
 
     ```shell
     ping 10.168.0.6 # Can ping own host (e.g. k8s-master)
