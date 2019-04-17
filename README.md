@@ -28,6 +28,7 @@ Program for the Private training - Apr 2019
     1. [API Server](modules/api.md)
     1. [etcd](modules/etcd.md)
     1. [Scheduler](modules/scheduler.md)
+    1. [Service Networking](svc-networking.md)
     1. [Networking](modules/cni-networking-bash.md)
     1. [Helm Deep Dive](modules/helm-deep-dive.md)
 * **Day 4**
