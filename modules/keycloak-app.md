@@ -20,13 +20,14 @@ This repository contains the source code for the Keycloak Server, Java adapters 
 
     Create namespace for keycloak and update context
     ```console
+    cd ~/k8s-training/
     kubectl create ns keycloak
     kubens keycloak
     ```
 
     Deploy Keycloak Deployment and service
     ```console
-    kubectl apply -f keycloak/keycloak.yaml
+    kubectl apply -f modules/keycloak-demo/keycloak/keycloak.yaml
     ```
 
     check status
