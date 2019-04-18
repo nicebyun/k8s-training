@@ -32,7 +32,7 @@
 1. While the default scheduler is disabled and a pod in the Pending state, try to manually assign a node to the container using API.
     * Use curl to sent a POST request to the `/api/v1/namespaces/{namespace}/bindings` endpoint.
     * The body of the request should have the following format `{"apiVersion":"v1", "kind": "Binding", "metadata": {"name": "<pod-name>"}, "target": {"apiVersion": "v1", "kind": "Node", "name": "<node-name>"}}`
-    * Use the official [Reference documentation](https://kubernetes.io/docs/reference/) and correct version of the [API Reference](https://v1-9.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.9/#binding-v1-core) to help.  
+    * Use the official [Reference documentation](https://kubernetes.io/docs/reference/) and correct version of the [API Reference](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.10/#binding-v1-core) to help.  
     ```
     curl -X POST 127.0.0.1:8080/api/v1/namespaces/default/bindings -H "Content-Type:application/json" -d '{"apiVersion":"v1", "kind": "Binding", "metadata": {"name": "twocontainers"}, "target": {"apiVersion": "v1", "kind": "Node", "name": "master-us-west1-c-4lmf"}}'
     ```
