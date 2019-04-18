@@ -377,15 +377,17 @@
     ```
 
     Let's look at chart version:
-    ```
+    ```console
     cat charts/supercool/Chart.yaml
     ```
 
     Output:
-    ```
+    ```console
     apiVersion: v1
     appVersion: "1.0"
     description: A Helm chart for Kubernetes
     name: supercool
     version: 0.1.0
     ```
+
+    Now lets convert the [Cassandra StatefulSet](stateful_sets.md) to helm chart. Lets just make sure the previous one is delete just in case.
