@@ -22,7 +22,7 @@ EOF
 
 sudo apt-get update -y
 
-sudo apt-get install -y  docker.io kubelet kubeadm kubectl kubernetes-cni nfs-common
+sudo apt-get install -y  docker.io kubelet=1.13.2-00 kubeadm=1.13.2-00  kubectl=1.13.2-00  kubernetes-cni=0.6.0-00 nfs-common
 
 
 sudo sysctl net.bridge.bridge-nf-call-iptables=1
