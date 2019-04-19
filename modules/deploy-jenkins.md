@@ -156,7 +156,7 @@ Deploy Jenkins
 1. Deploy Jenkins chart using Helm
 
     ```
-    ./helm install --name cd \
+    helm install --name cd \
         --namespace cd \
         -f jenkins/values.yaml \
         --version 0.16.6 \
