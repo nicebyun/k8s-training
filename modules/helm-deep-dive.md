@@ -286,6 +286,64 @@
 
     If we want to permanently delete release we would use `helm delete --purge <release>` option.
 
+    For those of you interested in getting concourse working. You can update following:
+    ```console
+    mkdir ~/concourse/ && cd ~/concourse/
+    helm fetch stable/concourse --version 5.1.2 --untar=true
+    cp concourse/values.yaml .
+    ```
+
+    Then you need to modify your values file with your values:
+    ```diff
+        --- values.yaml 2019-04-19 06:44:38.817011398 +0900
+    +++ concourse/values.yaml       2019-04-19 05:51:44.522646228 +0900
+    @@ -98,7 +98,7 @@
+         ##
+         ## Example: http://ci.concourse-ci.org
+         ##
+    -    externalUrl: https://concourse.35.247.98.135.nip.io
+    +    externalUrl:
+
+         ## URL used to reach this ATC from other ATCs in the cluster.
+         ## By default, this corresponds to `$(POD_IP):$(CONCOURSE_BIND_PORT)`.
+    @@ -1282,7 +1282,7 @@
+       ingress:
+         ## Enable Ingress.
+         ##
+    -    enabled: true
+    +    enabled: false
+
+         ## Annotations to be added to the web ingress.
+         ## Example:
+    @@ -1296,8 +1296,7 @@
+         ## Example:
+         ##   - concourse.domain.com
+         ##
+    -    hosts:
+    -       - concourse.35.247.98.135.nip.io
+    +    hosts:
+
+         ## TLS configuration.
+         ## Secrets must be manually created in the namespace.
+    @@ -1307,9 +1306,6 @@
+         ##       - concourse.domain.com
+         ##
+         tls:
+    -      - secretName: concourse-web-tls
+    -        hosts:
+    -          - concourse.35.247.98.135.nip.io
+
+     ## Configuration values for Concourse Worker components.
+     ## For more information regarding the characteristics of
+    ```
+
+    You would have to delete purge and you would have to also install cert in ci namespace:
+    ```
+    kubens ci
+    kubectl create secret tls concourse-web-tls --key ${KEY_FILE} --cert ${CERT_FILE}
+    helm install stable/concourse --version 5.1.2 --namespace ci --name concourse -f values.yaml
+    ```
+
 1. Fetching a chart and unpacking it:
 
     Let's say we don't know where git repo for helm chart is and we want to make some modifications and make it our own.
