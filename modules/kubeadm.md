@@ -18,7 +18,7 @@ We wanted to show our students another way to deploying kubernetes and next two 
    We will create one master and two nodes for our cluster:
 
    ```shell
-   cd ~/k8s-training-jan2019
+   cd ~/k8s-training
 
    gcloud compute instances create k8s-master-01 --zone=us-west1-c --machine-type=n1-standard-4 --subnet=default \
      --image=ubuntu-1604-xenial-v20190122a --image-project=ubuntu-os-cloud --boot-disk-size=20GB --boot-disk-type=pd-standard \
